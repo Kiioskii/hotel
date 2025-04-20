@@ -4,17 +4,17 @@ import { visionTool } from "@sanity/vision";
 import { schemas } from "./schemas";
 
 export default defineConfig({
-    name: "default",
-    title: "hotel",
+  name: "default",
+  title: "hotel",
 
-    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
-    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET as string,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID as string,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET as string,
 
-    basePath: "/studio",
+  basePath: "/studio",
 
-    plugins: [structureTool(), visionTool()],
+  plugins: [structureTool(), visionTool()],
 
-    schema: {
-        types: schemas,
-    },
+  schema: {
+    types: schemas,
+  },
 });

@@ -6,10 +6,10 @@ import { FcGoogle } from "react-icons/fc";
 import { signUp } from "next-auth-sanity/client";
 import { signIn, useSession } from "next-auth/react";
 import toast from "react-hot-toast";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 const defaultFormData = {
   email: "",
-  name: "",
+  // name: "",
   password: "",
 };
 
@@ -33,9 +33,10 @@ const Auth = () => {
   const loginHandler = async () => {
     try {
       await signIn();
-      router.push("/W");
+      router.push("/");
     } catch (error) {
-      toast.error(`There is a problem with log in: ${error}`);
+      console.log(error);
+      toast.error("Something wen't wrong");
     }
   };
 
@@ -43,12 +44,15 @@ const Auth = () => {
     event.preventDefault();
 
     try {
+      console.log("formData", formData);
       const user = await signUp(formData);
       if (user) {
         toast.success("Success. Please sign in");
       }
     } catch (err) {
       console.log("error", err);
+      console.log("error", err.message);
+      console.log("error", JSON.stringify(err));
       toast.error("Something wen't wrong");
     } finally {
       // setFormData(defaultFormData);
@@ -81,8 +85,8 @@ const Auth = () => {
             className={inputStyles}
             value={formData.email}
             onChange={handleInputChange}
-          />{" "}
-          <input
+          />
+          {/* <input
             type="text"
             name="name"
             placeholder="John Bravo"
@@ -90,7 +94,7 @@ const Auth = () => {
             className={inputStyles}
             value={formData.name}
             onChange={handleInputChange}
-          />
+          /> */}
           <input
             type="password"
             name="password"
