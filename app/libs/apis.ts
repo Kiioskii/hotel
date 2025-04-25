@@ -10,3 +10,8 @@ export const getFeaturedRoom = async () => {
   );
   return result;
 };
+
+export const getRooms = async () => {
+  const result = await sanityClient.fetch<Rooms[]>(queries.getRoomsQuery);
+  return result;
+};
