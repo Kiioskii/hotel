@@ -12,6 +12,19 @@ export const getFeaturedRoom = async () => {
 };
 
 export const getRooms = async () => {
-  const result = await sanityClient.fetch<Rooms[]>(queries.getRoomsQuery);
+  const result = await sanityClient.fetch<Room[]>(
+    queries.getRoomsQuery,
+    {},
+    { cache: "no-cache" }
+  );
+  return result;
+};
+
+export const getRoom = async (slug: string) => {
+  const result = await sanityClient.fetch<Room>(
+    queries.getRoomQuery,
+    { slug },
+    { cache: "no-cache" }
+  );
   return result;
 };

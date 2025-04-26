@@ -31,8 +31,6 @@ const RoomsPage = () => {
   if (typeof data === "undefined" && !isLoading)
     throw new Error("Cannot fetch data");
 
-  console.log("data", data);
-
   const filterRooms = (rooms: Room[]) => {
     return rooms.filter((room) => {
       if (
