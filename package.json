@@ -9,16 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@sanity/vision": "^2.2.6",
-    "next": "^15.3.1",
+    "@sanity/vision": "^3.74.1",
+    "next": "15.1.6",
     "next-auth": "^4.24.11",
     "next-auth-sanity": "^1.5.3",
-    "next-sanity": "^0.8.5",
+    "next-sanity": "^9.8.55",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.2",
     "react-icons": "^5.4.0",
-    "sanity": "^2.36.6",
+    "sanity": "^3.74.1",
     "swr": "^2.3.3"
   },
   "devDependencies": {

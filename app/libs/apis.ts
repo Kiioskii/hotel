@@ -20,7 +20,7 @@ export const getRooms = async () => {
   return result;
 };
 
-export const getRoom = async (slug: string) => {
+export const getRoom = async (slug: string): Promise<Room> => {
   const result = await sanityClient.fetch<Room>(
     queries.getRoomQuery,
     { slug },
