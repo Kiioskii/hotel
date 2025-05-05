@@ -35,3 +35,15 @@ export type Room = {
   specialNote: string;
   type: string;
 };
+
+export type CreateBookingDto = {
+  user: string;
+  hotelRoom: string;
+  checkInDate: string;
+  checkOutDate: string;
+  numberOfDays: number;
+  adults: number;
+  children: number;
+  totalPrice: number;
+  discount: number;
+};

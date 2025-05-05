@@ -66,7 +66,7 @@ export const Header = () => {
           <Link href={"/"}>Home</Link>
         </li>
         <li className="hover:-translate-y-2 duration-500 transition-all">
-          <Link href={"/"}>Rooms</Link>
+          <Link href={"/rooms"}>Rooms</Link>
         </li>
         <li className="hover:-translate-y-2 duration-500 transition-all">
           <Link href={"/"}>Contact</Link>
