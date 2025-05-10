@@ -69,8 +69,19 @@ export async function POST(req: Request) {
           },
         },
       ],
-      payment_method_types: ["card"],
+      payment_method_types: ["card", "blik", "p24"],
       success_url: `${origin}/users/${userId}`,
+      metadata: {
+        checkInDate: formattedCheckInDate,
+        checkOutDate: formattedCheckOutDate,
+        adults,
+        children,
+        hotelRoom: room._id,
+        numberOfDays,
+        user: userId,
+        discount: room.discount,
+        totalPrice: totalPrice.toString(),
+      },
     });
 
     return NextResponse.json(stripeSession, {
