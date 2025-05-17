@@ -14,6 +14,8 @@ import { BsJournalBookmarkFill } from "react-icons/bs";
 import { GiMoneyStack } from "react-icons/gi";
 import Table from "@/app/components/Table/Table";
 import Chart from "@/app/components/Chart/Chart";
+import RatingModal from "@/app/components/RatingModal/RatingModal";
+import BackDrop from "@/app/components/BackDrop/BackDrop";
 
 const UserPage = () => {
   const params = useParams();
@@ -25,6 +27,10 @@ const UserPage = () => {
 
   const [roomId, setRoomId] = useState<string | null>(null);
   const [isRatingVisible, setIsRatingVisible] = useState<boolean>(false);
+  const [isSubmittingReview, setIsSubmittingReview] = useState(false);
+  const [ratingValue, setRatingValue] = useState<number>(0);
+  const [ratingText, setRatingText] = useState("");
+
   const toggleRatingModal = () => setIsRatingVisible((prev) => !prev);
 
   const fetchUserBooking = async () => getUserBookings(userId);
@@ -165,6 +171,17 @@ const UserPage = () => {
           )}
         </div>
       </div>
+      <RatingModal
+        isOpen={isRatingVisible}
+        ratingValue={ratingValue}
+        setRatingValue={setRatingValue}
+        ratingText={ratingText}
+        setRatingText={setRatingText}
+        isSubmittingReview={isSubmittingReview}
+        // reviewSubmitHandler={reviewSubmitHandler}
+        toggleRatingModal={toggleRatingModal}
+      />
+      <BackDrop isOpen={isRatingVisible} />
     </div>
   );
 };
