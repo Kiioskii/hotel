@@ -1,3 +1,4 @@
+import { updateReview } from "./apis";
 import { groq } from "next-sanity";
 
 export const getFeaturedRoomQuery = groq`*[_type == "hotelRoom" && isFeatured == true][0] {
@@ -71,4 +72,8 @@ isAdmin,
 about,
 _createdAt,
 image,
+}`;
+
+export const checkUserReviewsQuery = groq`*[_type == "review" && user._ref == $userId && hotelRoom._ref == $hotelRoomId][0]{
+_id,
 }`;
