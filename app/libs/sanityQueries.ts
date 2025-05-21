@@ -77,3 +77,14 @@ image,
 export const checkUserReviewsQuery = groq`*[_type == "review" && user._ref == $userId && hotelRoom._ref == $hotelRoomId][0]{
 _id,
 }`;
+
+export const getRoomReviewsQuery = groq`*[_type == "review" && hotelRoom._ref == $roomId]{
+_id,
+_createdAt,
+text,
+userRating,
+user->{
+    _id,
+    name,
+},
+}`;

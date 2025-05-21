@@ -1,12 +1,10 @@
-import { get } from "http";
 import { CreateBookingDto, Room } from "../models/rooms";
 import sanityClient from "./sanity";
 import * as queries from "./sanityQueries";
 import axios from "axios";
 import { Booking } from "../models/booking";
 import { User } from "../models/user";
-import user from "@/schemas/users";
-import { CreateReviewDto, UpdateReviewDto } from "../models/reviews";
+import { CreateReviewDto, Review, UpdateReviewDto } from "../models/reviews";
 
 export const getFeaturedRoom = async () => {
     const result = await sanityClient.fetch<Room>(queries.getFeaturedRoomQuery, {}, { cache: "no-cache" });
@@ -152,4 +150,9 @@ export const createReview = async ({ hotelRoomId, reviewText, userRating, userId
         { headers: { Authorization: `Bearer ${process.env.SANITY_STUDIO_TOKEN}` } }
     );
     return data;
+};
+
+export const getRoomReviews = async (roomId: string) => {
+    const result = await sanityClient.fetch<Review[]>(queries.getRoomReviewsQuery, { roomId }, { cache: "no-cache" });
+    return result;
 };
