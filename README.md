@@ -2,19 +2,19 @@ Hotel Booking Application – Built with Next.js
 
 This is a full-featured hotel booking web application developed with Next.js, offering a seamless experience for both users and administrators. The platform allows users to easily browse, book, and manage hotel reservations, with secure payments and personalized user profiles.
 
-🔑 Core Features:
--> Authentication System: Users can register and log in using traditional email/password or via their GitHub account thanks to third-party OAuth integration.
--> Room Booking: Search and reserve available hotel rooms with a streamlined booking process.
--> Stripe Payments: Integrated Stripe for secure and reliable online payments.
--> Comment System: Users can leave and read reviews to help others make informed booking decisions.
--> User Profile & Booking History: Each user has a profile page displaying statistics and a history of previous bookings.
+🔑 Core Features:<br />
+-> Authentication System: Users can register and log in using traditional email/password or via their GitHub account thanks to third-party OAuth integration.<br />
+-> Room Booking: Search and reserve available hotel rooms with a streamlined booking process.<br />
+-> Stripe Payments: Integrated Stripe for secure and reliable online payments.<br />
+-> Comment System: Users can leave and read reviews to help others make informed booking decisions.<br />
+-> User Profile & Booking History: Each user has a profile page displaying statistics and a history of previous bookings.<br />
 
-🛠 Technologies Used:
--> Next.js for server-side rendering and optimized performance
--> TypeScript/JavaScript for scalable and maintainable code
--> Axios for handling API requests
--> Stripe for payment processing
--> Sanity CMS for managing dynamic content
+🛠 Technologies Used:<br />
+-> Next.js for server-side rendering and optimized performance<br />
+-> TypeScript/JavaScript for scalable and maintainable code<br />
+-> Axios for handling API requests<br />
+-> Stripe for payment processing<br />
+-> Sanity CMS for managing dynamic content<br />
 
 This project combines modern technologies to deliver a responsive and user-friendly hotel booking experience, emphasizing performance, security, and usability.
 
