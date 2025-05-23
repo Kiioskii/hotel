@@ -1,4 +1,3 @@
-import { user } from "@/schemas/users";
 export type UpdateReviewDto = {
     reviewId: string;
     reviewText: string;

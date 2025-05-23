@@ -152,7 +152,7 @@ export const createReview = async ({ hotelRoomId, reviewText, userRating, userId
     return data;
 };
 
-export const getRoomReviews = async (roomId: string) => {
+export const getRoomReviews = async (roomId: string | null) => {
     const result = await sanityClient.fetch<Review[]>(queries.getRoomReviewsQuery, { roomId }, { cache: "no-cache" });
     return result;
 };

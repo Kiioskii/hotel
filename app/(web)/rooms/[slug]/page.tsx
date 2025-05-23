@@ -13,7 +13,6 @@ import BookRoomCta from "@/app/components/BookRoomCta/BookRoomCta";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
-import { get } from "http";
 import { getStripe } from "@/app/libs/stripe";
 import RoomReview from "@/app/components/RoomReview/RoomReview";
 
@@ -35,8 +34,14 @@ const RoomDetails = () => {
 
     if (!room) return <LoadingSpinner />;
 
-    console.log("room", room);
-
+    const calcMinCheckOutDate = () => {
+        if (checkInDate) {
+            const nextDay = new Date(checkInDate);
+            nextDay.setDate(nextDay.getDate() + 1);
+            return nextDay;
+        }
+        return undefined;
+    };
     const calcNoOfDays = () => {
         if (!checkInDate || !checkOutDate) return 0;
         const timeDiff = checkOutDate.getTime() - checkInDate.getTime();
@@ -158,7 +163,7 @@ const RoomDetails = () => {
                             checkOutDate={checkOutDate}
                             setCheckInDate={setCheckInDate}
                             setCheckOutDate={setCheckOutDate}
-                            // calcMinCheckOutDate={calcMinCheckOutDate}
+                            calcMinCheckOutDate={calcMinCheckOutDate}
                             adults={adults}
                             noOfChildren={noOfChildren}
                             setAdults={setAdults}
