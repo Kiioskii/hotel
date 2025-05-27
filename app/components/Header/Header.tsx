@@ -37,7 +37,9 @@ export const Header = () => {
                                 )}
                             </Link>
                         ) : (
-                            <></>
+                            <Link href={"/auth"} className="hover:-translate-y-2 duration-500 transition-all">
+                                Log In
+                            </Link>
                         )}
                     </li>
                     <li className="ml-2">
